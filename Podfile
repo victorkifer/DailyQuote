@@ -5,7 +5,8 @@ target 'DailyQuote' do
   # networking
   pod 'Alamofire', '~> 3.4'
   # json parsing
-  pod 'SwiftyJSON', '~> 2.3'
+  pod 'ObjectMapper', '~> 1.3'
+  pod 'AlamofireObjectMapper', '~> 3.0'
   # image loader
   pod 'Kingfisher', '~> 2.4'
   

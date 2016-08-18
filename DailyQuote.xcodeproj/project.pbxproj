@@ -15,6 +15,9 @@
 		5731329E1D6594EE00EFA821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5731329C1D6594EE00EFA821 /* LaunchScreen.storyboard */; };
 		573132A91D6594EE00EFA821 /* DailyQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573132A81D6594EE00EFA821 /* DailyQuoteTests.swift */; };
 		573132B41D6594EE00EFA821 /* DailyQuoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573132B31D6594EE00EFA821 /* DailyQuoteUITests.swift */; };
+		573132C61D6597FE00EFA821 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573132C51D6597FE00EFA821 /* GCDBlackBox.swift */; };
+		573132CA1D65991A00EFA821 /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573132C91D65991A00EFA821 /* QuoteService.swift */; };
+		573132CD1D65995A00EFA821 /* QuotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573132CC1D65995A00EFA821 /* QuotesResponse.swift */; };
 		6BE35802DF21E7EC825F4A0F /* Pods_DailyQuoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A2C5775C49B2D3B9A6F548 /* Pods_DailyQuoteUITests.framework */; };
 		FECF5550EFD04B1A8CA444E7 /* Pods_DailyQuoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B0006EBE02B256181E7E40 /* Pods_DailyQuoteTests.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +54,9 @@
 		573132AF1D6594EE00EFA821 /* DailyQuoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyQuoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		573132B31D6594EE00EFA821 /* DailyQuoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuoteUITests.swift; sourceTree = "<group>"; };
 		573132B51D6594EE00EFA821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		573132C51D6597FE00EFA821 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDBlackBox.swift; path = ../../dfadf/DailyQuote/GCDBlackBox.swift; sourceTree = "<group>"; };
+		573132C91D65991A00EFA821 /* QuoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuoteService.swift; path = ../../dfadf/DailyQuote/QuoteService.swift; sourceTree = "<group>"; };
+		573132CC1D65995A00EFA821 /* QuotesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesResponse.swift; sourceTree = "<group>"; };
 		76B0006EBE02B256181E7E40 /* Pods_DailyQuoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyQuoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77EC4347B229697B241F5245 /* Pods-DailyQuoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyQuoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyQuoteUITests/Pods-DailyQuoteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91778F7FB8CD38D3D46B00AC /* Pods-DailyQuoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyQuoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyQuoteTests/Pods-DailyQuoteTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,11 +121,12 @@
 			isa = PBXGroup;
 			children = (
 				573132931D6594EE00EFA821 /* AppDelegate.swift */,
-				573132951D6594EE00EFA821 /* ViewController.swift */,
-				573132971D6594EE00EFA821 /* Main.storyboard */,
-				5731329A1D6594EE00EFA821 /* Assets.xcassets */,
-				5731329C1D6594EE00EFA821 /* LaunchScreen.storyboard */,
-				5731329F1D6594EE00EFA821 /* Info.plist */,
+				573132C51D6597FE00EFA821 /* GCDBlackBox.swift */,
+				573132C11D65978200EFA821 /* Model */,
+				573132C21D6597A000EFA821 /* Controller */,
+				573132CE1D659BA900EFA821 /* Categories */,
+				573132C31D6597B100EFA821 /* Assets */,
+				573132C41D6597BD00EFA821 /* Supporting Files */,
 			);
 			path = DailyQuote;
 			sourceTree = "<group>";
@@ -140,6 +147,72 @@
 				573132B51D6594EE00EFA821 /* Info.plist */,
 			);
 			path = DailyQuoteUITests;
+			sourceTree = "<group>";
+		};
+		573132C11D65978200EFA821 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				573132C81D6598F500EFA821 /* Database */,
+				573132C71D6598EE00EFA821 /* Api */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		573132C21D6597A000EFA821 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				573132951D6594EE00EFA821 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		573132C31D6597B100EFA821 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5731329C1D6594EE00EFA821 /* LaunchScreen.storyboard */,
+				573132971D6594EE00EFA821 /* Main.storyboard */,
+				5731329A1D6594EE00EFA821 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		573132C41D6597BD00EFA821 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5731329F1D6594EE00EFA821 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		573132C71D6598EE00EFA821 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				573132CB1D65994400EFA821 /* Entities */,
+				573132C91D65991A00EFA821 /* QuoteService.swift */,
+			);
+			name = Api;
+			sourceTree = "<group>";
+		};
+		573132C81D6598F500EFA821 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		573132CB1D65994400EFA821 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				573132CC1D65995A00EFA821 /* QuotesResponse.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		573132CE1D659BA900EFA821 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		6D83E41B241A3FD5CD492D2F /* Frameworks */ = {
@@ -428,6 +501,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				573132961D6594EE00EFA821 /* ViewController.swift in Sources */,
+				573132CD1D65995A00EFA821 /* QuotesResponse.swift in Sources */,
+				573132C61D6597FE00EFA821 /* GCDBlackBox.swift in Sources */,
+				573132CA1D65991A00EFA821 /* QuoteService.swift in Sources */,
 				573132941D6594EE00EFA821 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
